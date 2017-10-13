@@ -1,0 +1,161 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/env_topview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
+	    <TextView
+	        android:layout_width="100dp"
+	        android:layout_height="fill_parent"
+	        android:labelFor="@+id/editText_WebServiceUrl"
+	        android:text="@string/text_env_webserviceurl" />
+
+	    <EditText
+	        android:id="@+id/editText_WebServiceUrl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+			android:scrollHorizontally="true"
+			android:ellipsize="end"
+			android:inputType="textUri" />
+    </LinearLayout>
+	    	  	    
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
+		<TextView
+		    android:layout_width="100dp"
+		    android:layout_height="wrap_content"
+		    android:labelFor="@+id/editText_WebPageUrl"
+		    android:text="@string/text_env_webpageurl" />
+
+        <EditText
+            android:id="@+id/editText_WebPageUrl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+			android:scrollHorizontally="true"
+			android:ellipsize="end"
+			android:inputType="textUri"			
+        	/>
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
+		<TextView
+		    android:layout_width="100dp"
+		    android:layout_height="wrap_content"
+		    android:labelFor="@+id/editText_UpdateUrl"
+		    android:text="@string/text_env_updateurl" />
+
+        <EditText
+            android:id="@+id/editText_UpdateUrl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+			android:scrollHorizontally="true"
+			android:ellipsize="end"
+			android:inputType="textUri"			
+        	/>
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
+   		<TextView
+   		    android:layout_width="100dp"
+   		    android:layout_height="wrap_content"
+   		    android:labelFor="@+id/editText_keepdays"
+   		    android:text="@string/text_env_keepdays" />
+			        
+        <EditText
+            android:id="@+id/editText_keepdays"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" 
+			android:scrollHorizontally="true"
+			android:ellipsize="end"			
+        	/>
+	</LinearLayout>
+			    	
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
+   		<TextView
+   		    android:layout_width="100dp"
+   		    android:layout_height="wrap_content"
+   		    android:labelFor="@+id/editText_logkeepdays"
+   		    android:text="@string/text_env_logkeepdays" />
+
+        <EditText
+            android:id="@+id/editText_logkeepdays"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" 
+			android:scrollHorizontally="true"
+			android:ellipsize="end"			
+            />
+
+	</LinearLayout>
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
+   		<TextView
+   		    android:layout_width="100dp"
+   		    android:layout_height="wrap_content"
+   		    android:labelFor="@+id/editText_soaptimeout"
+   		    android:text="@string/text_env_soaptimeout" />
+
+        <EditText
+            android:id="@+id/editText_soaptimeout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" 
+			android:scrollHorizontally="true"
+			android:ellipsize="end"			
+            />
+
+	</LinearLayout>
+		
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    >
+			        
+	    <Button
+    		android:onClick="onClickCancel"
+    		android:text="@string/text_cancel" 
+    		android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	    	android:layout_weight="1"
+	    	style="?android:attr/buttonBarButtonStyle"
+    		/>
+			    
+	    <Button
+	    	android:onClick="onClickOk"
+    		android:text="@string/text_register"
+    		android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+    		android:layout_weight="1"
+	    	style="?android:attr/buttonBarButtonStyle"
+		    />
+			    
+	</LinearLayout>
+
+</LinearLayout>
+
+    	

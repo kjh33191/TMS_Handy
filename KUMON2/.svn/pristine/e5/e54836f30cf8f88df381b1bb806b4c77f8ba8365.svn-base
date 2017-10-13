@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#FF7DCEF4"
+    android:orientation="horizontal" >
+
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:contentDescription="@string/image_description_pen_playback"
+        android:padding="6dip"
+        android:src="@drawable/pen_playback"
+        android:visibility="invisible" />
+
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:contentDescription="@string/image_description_postiticon"
+        android:padding="6dip"
+        android:src="@drawable/post_it_icon_off"
+        android:visibility="invisible" />
+
+    <RadioGroup
+        android:id="@+id/radiogroup_pen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radiobutton_pen_ll"
+            style="@style/PenLRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dip" />
+
+        <RadioButton
+            android:id="@+id/radiobutton_pen_mm"
+            style="@style/PenMRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dip" />
+
+        <RadioButton
+            android:id="@+id/radiobutton_pen_ss"
+            style="@style/PenSRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dip" />
+
+        <RadioButton
+            android:id="@+id/radiobutton_eraser_ss"
+            style="@style/EraserSRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dip" />
+
+        <RadioButton
+            android:id="@+id/radiobutton_eraser_mm"
+            style="@style/EraserMRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dip" />
+
+        <RadioButton
+            android:id="@+id/radiobutton_eraser_ll"
+            style="@style/EraserLRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dip" />
+    </RadioGroup>
+
+    <ImageButton
+        android:id="@+id/imagebutton_PenPlayBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:contentDescription="@string/image_description_pen_playback"
+        android:onClick="onClickPenPlayBack"
+        android:padding="6dip"
+        android:src="@drawable/pen_playback" />
+
+    <ImageButton
+        android:id="@+id/imagebutton_memo"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:contentDescription="@string/image_description_postiticon"
+        android:onClick="onClickMemo"
+        android:src="@drawable/post_it_icon_off" />
+
+</LinearLayout>

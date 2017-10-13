@@ -1,0 +1,140 @@
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppBG"
+    android:id="@+id/memoland_topview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/pagenext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="40dp"
+        android:layout_y="50dp"
+        android:background="#FFFFFFFF"
+        android:contentDescription="@string/image_description_bnext"
+        android:onClick="onClickPageNext"
+        android:src="@drawable/bnext_land"
+        android:visibility="invisible" />
+    
+    <ImageView
+        android:id="@+id/pageback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="40dp"
+        android:layout_y="120dp"
+        android:background="#FFFFFFFF"
+        android:contentDescription="@string/image_description_bback"
+        android:onClick="onClickPageBack"
+        android:src="@drawable/bback_land"
+        android:visibility="invisible" />
+    
+	<ImageView
+	    android:id="@+id/imageviewTitle"
+	    android:layout_width="60dp"
+	    android:layout_height="300dp"
+	    android:layout_x="5dp"
+	    android:layout_y="320dp"
+	    android:background="#FFFFFFFF"
+	    android:contentDescription="@string/image_description_title" />
+    
+	<ImageView
+	    android:id="@+id/imageviewSound"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_x="40dp"
+	    android:layout_y="940dp"
+	    android:background="#FFFFFFFF"
+	    android:contentDescription="@string/image_description_speaker"
+	    android:onClick="onClickSoundMemo"
+	    android:src="@drawable/icon_speaker_on_land" />
+	
+	<ImageView
+	    android:id="@+id/imageviewInk"
+	    android:layout_width="350dp"
+	    android:layout_height="500dp"
+	    android:layout_x="70dp"
+	    android:layout_y="10dp"
+	    android:background="#FFFFFFFF"
+	    android:contentDescription="@string/image_description_ink" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="460dp"
+        android:layout_y="100dp"
+        android:contentDescription="@string/image_description_back"
+        android:onClick="onClickBack"
+        android:src="@drawable/btn_back_land" />
+
+    <ImageView
+        android:id="@+id/imageviewMemo"
+        android:layout_width="480dp"
+        android:layout_height="470dp"
+        android:layout_x="70dp"
+        android:layout_y="520dp"
+        android:background="#FFDDDDDD"
+        android:contentDescription="@string/image_description_memo"
+        android:textColor="#FF000000"
+        android:textSize="22sp" />
+
+	<TextView
+		android:layout_x="40dp"
+        android:layout_y = "520dp"
+        android:onClick="onClickDummy"
+       	android:id="@+id/textview_record"
+		android:layout_width="48dp"
+		android:layout_height="180dp"
+		android:background="@drawable/simple_frame" 
+		/>
+	
+	<ImageView
+	    android:id="@+id/imagebutton_RecordClose"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_x="48dp"
+	    android:layout_y="525dp"
+	    android:contentDescription="@string/image_description_close"
+	    android:onClick="onClickRecordClose"
+	    android:src="@drawable/close_middle" />
+
+	<ImageView
+	    android:id="@+id/imagebutton_RecordPause"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_x="48dp"
+	    android:layout_y="555dp"
+	    android:contentDescription="@string/image_description_rppause"
+	    android:onClick="onClickRecordPause"
+	    android:src="@drawable/rp_pause_no_land" />
+		
+	<ImageView
+	    android:id="@+id/imagebutton_RecordPlay"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_x="48dp"
+	    android:layout_y="590dp"
+	    android:contentDescription="@string/image_description_rpstartx1"
+	    android:onClick="onClickRecordPlay"
+	    android:src="@drawable/rp_startx1_off_land" />
+					
+    <ImageView
+        android:id="@+id/imagebutton_Record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="48dp"
+        android:layout_y="625dp"
+        android:contentDescription="@string/image_description_rprecord"
+        android:src="@drawable/record_no" />
+		
+    <ImageView
+        android:id="@+id/imagebutton_RecordStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="48dp"
+        android:layout_y="660dp"
+        android:contentDescription="@string/image_description_rpstop"
+        android:onClick="onClickRecordStop"
+        android:src="@drawable/rp_stop_no" />
+ 
+</AbsoluteLayout>

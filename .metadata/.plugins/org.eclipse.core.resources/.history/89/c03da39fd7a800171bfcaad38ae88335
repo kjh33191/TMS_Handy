@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="js/common/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/common/vue.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script>
+
+    </script>
+    <link rel="stylesheet" href="css/grid/style.css">
+
+    <title>Intro Page</title>
+</head>
+<body>
+
+<form>
+    <div id="root" class="container">
+        <h1>Expense</h1>
+        <h2>{{ moment(new Date()).format("LLLL") }}</h2>
+
+        <br/>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-2">
+                    <template v-for="branch in branches">
+                        <input type="radio"
+                               :id="branch"
+                               :value="branch"
+                               name="branch"
+                               >
+                        <label :for="branch">{{ branch }}</label><br>
+                    </template>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" placeholder="금액" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">등록</button>
+            </div>
+            <div class="col-md-6">
+                <textarea row="2" maxlength="500" placeholder="비고" class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+
+        </div>
+    </div>
+
+
+    <!-- component template -->
+    <script type="text/x-template" id="grid-template">
+
+            </script>
+
+    <!-- demo root element -->
+    <div id="demo">
+        <form id="search">
+            Search <input name="query" v-model="searchQuery">
+        </form>
+        <demo-grid
+                :data="gridData"
+                :columns="gridColumns"
+                :filter-key="searchQuery">
+        </demo-grid>
+    </div>
+
+    <script>
+        moment.lang('ko');
+
+        var vm = new Vue({
+          el: '#root',
+          data: {
+            myDate : moment(new Date()).format("LLLL"),
+            branches: ['아침식사', '점심식사', '저녁식사', '마트장', '간식', '일용품', '월세', '세금'],
+          },
+        })
+    </script>
+    <script src="js/grid/grid.js"></script>
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    style="@style/AppBG"
+   	android:id="@+id/start_topview"
+    > 
+    <ImageView
+		android:onClick="onClickSetting"	    
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/setup2"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentLeft="true"
+		android:contentDescription="@string/image_description_setup"/> 
+    
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentTop="true"
+	    android:gravity="center_horizontal"
+	    android:orientation="horizontal"
+	    android:background="#FF7DCEF4" >
+	 	
+	 	<ImageView
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:contentDescription="@string/image_description_title_big"
+		    android:src="@drawable/kumon_title_big" />
+			
+	</LinearLayout>
+		
+	<ImageButton
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="200dp"
+	    android:contentDescription="@string/image_description_start"
+	    android:onClick="onClickEnter"
+	    android:src="@drawable/btn_enter" />
+
+	<Button
+	    android:layout_width="200dp"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="400dp"
+	    android:onClick="onClickSetting"
+	    android:text="@string/text_environment_setting" />
+					    		
+</RelativeLayout>

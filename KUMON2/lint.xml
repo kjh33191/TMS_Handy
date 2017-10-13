@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="DuplicateIds" severity="warning" />
+    <issue id="IconLocation" severity="informational" />
+    <issue id="ObsoleteLayoutParam">
+        <ignore path="res/layout/activity_study.xml" />
+    </issue>
+</lint>

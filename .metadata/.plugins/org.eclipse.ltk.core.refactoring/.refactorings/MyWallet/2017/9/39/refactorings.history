@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;util&apos; to &apos;Util&apos;&#x0D;&#x0A;- Original project: &apos;MyWallet&apos;&#x0D;&#x0A;- Original element: &apos;util&apos;&#x0D;&#x0A;- Renamed element: &apos;Util&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;util&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{util.java[util" matchStrategy="1" name="Util" qualified="false" references="true" similarDeclarations="false" stamp="1506660559182" textual="false" version="1.0"/>
+</session>

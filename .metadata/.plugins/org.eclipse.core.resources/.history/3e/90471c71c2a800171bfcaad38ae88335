@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/js/common/jquery-3.2.1.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+#main {
+  margin-top: 60px;
+}
+</style>
+    <title>Title</title>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Labor System</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" >
+            <ul class="nav navbar-nav navbar-right">
+                <!-- 部門・会社権限 -->
+                <!--<?php if($sf_user->hasCredential('manager') or $sf_user->hasCredential('normal') or $sf_user->hasCredential('general')): ?>-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">物量予定
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="amount/index">データーアップロード</a></li>
+                        <li><a href="amount/list">データ確認・修正</a></li>
+                        <li><a href="amount/list">収受別数量アップロード</a></li>
+                    </ul>
+                </li>
+
+                <li class=""><a href="work">ワークスケジュール作成</a></li>
+                <li class=""><a href="shift/list">シミュレーション</a></li>
+
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">日報
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="report/index">一覧・登録</a></li>
+                        <li><a href="report/csv">CSV登録・ダウンロード</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">勤怠データ
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="attendance/index">実績</a></li>
+                        <li><a href="attendance/downloadCsv">予定</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">実績データ
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="attendance/index">日次決算</a></li>
+                        <li><a href="attendance/index">生産性</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="login-name">
+</div>
+
+<div class="container-fluid" id="main">
+
+    <h2 class="page-header">物量予定データアップロード</h2>
+
+    <!--<?php echo alert_infomation() ?>-->
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>手順①</th>
+            <td>
+                <p>物量データファイルをダウンロードしてください<p>
+
+                <form clas="form form-inline" action="amount/downloadUploadCsv">
+
+                <div class="input-group input-group-sm">
+                    <select class="form-control" id="formatyear">
+                        <option>2017</option>
+                        <option>2016</option>
+                        <option>2015</option>
+                        <option>2014</option>
+                    </select>
+                    <!--<?php echo select_tag('formatyear', options_for_select($yearoptions2, $sf_request->getParameter('year', date('Y'))), array('class' => 'form-control',)) ?>-->
+                    <div class="input-group-addon">年</div>
+                    <select class="form-control" id="formatmonth">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                    </select>
+                    <!--<?php echo select_tag('formatmonth', options_for_select($monthoptions, $sf_re&lt;!&ndash;&ndash;&gt;quest->getParameter('month', date('m'))), array('class' => 'form-control',)) ?>-->
+                    <div class="input-group-addon">月の過去データ</div>
+                    <submit class="form-control btn-primary">ダウンロード</submit>
+                </div>
+                </form>
+                <br />
+
+                <form clas="form form-inline" action="amount/downloadCsvFormat">
+               <!-- <?php echo form_tag('amount/downloadCsvFormat', array('class' => 'form form-inline',)) ?>-->
+                <div class="input-group input-group-sm">
+                    <select class="form-control">
+                        <option>2017</option>
+                        <option>2016</option>
+                        <option>2015</option>
+                        <option>2014</option>
+                    </select>
+                    <!--<?php echo select_tag('formatyear', options_for_select($yearoptions, date('Y')), array('class' => 'form-control',)) ?>-->
+                    <div class="input-group-addon">年</div>
+                    <select class="form-control">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                    </select>
+                    <!--<?php echo select_tag('formatmonth', options_for_select($monthoptions, date('m')), array('class' => 'form-control',)) ?>-->
+                    <div class="input-group-addon">月分の白紙フォーマット</div>
+                    <submit class="form-control btn-primary">ダウンロード</submit>
+                    <!--<?php echo submit_tag('ダウンロード', array('class' => 'form-control btn-primary',)) ?>-->
+                </div>
+                </form>
+            </td>
+        </tr><tr>
+            <th>手順②</th>
+            <td>
+                <p>物量データファイルをExcelなどで編集し、予定データを作成してください</p>
+                <p class="text-danger">※【注意】ファイルは.csv形式で保存してください</p>
+            </td>
+        </tr><tr>
+            <th>手順③</th>
+            <td>
+                <p>作成した物量予定データをアップロードしてください</p>
+
+                <form class="form form-inline" method ="post" action="/amount/uploadCsv" enctype="multipart/form-data" >
+                <input type="file" class="form-control">
+                <div class="input-group">
+                    <input id="csvName" class="form-control" type="text" />
+                    <span class="input-group-btn">
+  						<a class="btn btn-default" onclick="$('input[id=csvfile]').click();">CSVファイルを選択</a>
+  						</span>
+                </div>
+                <div class="input-group">
+                    <!-- <?php //echo select_tag('year', options_for_select($yearoptions), array('class' => 'form-control',)) ?> -->
+                    <!--<?php echo select_tag('year', options_for_select($yearoptions2, date('Y')), array('class' => 'form-control',)) ?>-->
+                    <select class="form-control">
+                        <option>2017</option>
+                        <option>2016</option>
+                        <option>2015</option>
+                        <option>2014</option>
+                    </select>
+                    <div class="input-group-addon">年</div>
+                </div>
+                <div class="input-group clearfix">
+                    <select class="form-control">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                    </select>
+                    <div class="input-group-addon">月</div>
+                </div>
+                分として&nbsp;
+                    <input type="submit" class="btn btn-primary" value="アップロード" />
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">ご注意</h3>
+        </div>
+        <div class="panel-body">
+            <ul>
+                <li>データのアップロードは、フォーマットをダウンロードして、編集後、アップロードする</li>
+                <li>データは年月ごとに持ち、37か月以前のものは削除し、アップロードもできないものとする</li>
+                <li>アップロード後、値をチェックし、データに不整合があればエラー画面を表示する</li>
+                <li>ダウンロードしたデータには、曜日が入っているが、曜日は先月の曜日、もしくは仮の曜日であり、アップロードには反映しないものとする</li>
+                <li>iPadには、この画面を利用させない</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

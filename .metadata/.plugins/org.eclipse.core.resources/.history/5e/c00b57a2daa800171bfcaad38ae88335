@@ -1,0 +1,7 @@
+package com.kim.test.dao;
+
+import com.kim.test.entity.MemoEntity;
+
+public interface ExpenseDao {
+    MemoEntity selectAll();
+}

@@ -1,0 +1,18 @@
+spring.thymeleaf.mode=LEGACYHTML5
+
+#Database
+#spring.datasource.driverClassName=oracle.jdbc.OracleDriver
+#spring.datasource.url=jdbc:oracle:thin:@invsoft-svr1:1521:TKKMDB1
+
+
+
+spring:
+  datasource:
+    platform: mssql
+    url: jdbc:log4jdbc:sqlserver://localhost:1433;DatabaseName=TEST
+    driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+
+#Mybatis
+#mybatis.config-locations=classpath:mybatis/mybatis-config.xml
+mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
+mybatis.type-aliases-package=com.kim.test.entity

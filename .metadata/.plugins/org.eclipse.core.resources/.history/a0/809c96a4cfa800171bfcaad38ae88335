@@ -1,0 +1,297 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/js/common/jquery-3.2.1.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+#main {
+  margin-top: 60px;
+}
+</style>
+    <title>Title</title>
+</head>
+<body>
+<div th:include="labor/common/headerBar :: header"></div>
+<div class="login-name">
+</div>
+
+<div class="container-fluid" id="main">
+
+    <h2 class="page-header">ワークスケジュール初期値設定</h2>
+
+   <!-- <?php echo alert_infomation() ?>-->
+
+    <form class="form form-inline" action="amount/list">
+    <!--<?php echo form_tag('amount/list', array('class' => 'form form-inline',)) ?>-->
+
+    <div class="input-group input-group-sm">
+        <!--<?php echo select_tag('search_year', options_for_select($yearoptions, $year), array('class' => 'form-control',)) ?>-->
+        <select class="form-control">
+            <option>2017</option>
+            <option>2016</option>
+            <option>2015</option>
+            <option>2014</option>
+        </select>
+        <div class="input-group-addon">年</div>
+    </div>
+    <div class="input-group input-group-sm">
+        <!--<?php echo select_tag('search_month', options_for_select($monthoptions, $month), array('class' => 'form-control',)) ?>-->
+        <select class="form-control">
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+        </select>
+        <div class="input-group-addon">月</div>
+    </div>
+    <div class="input-group input-group-sm">
+        <!--<?php echo submit_tag('表示', array('class' => 'btn btn-primary btn-sm',)) ?>-->
+        <submit class="btn btn-primary btn-sm">表示</submit>
+    </div>
+    </form>
+
+    <div class="table-responsive minutely">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th rowspan="2" class="bg-warning">&nbsp;</th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <th class="bg-success">
+                    <?php echo $day ?>
+                    <div class="">
+                        <a href="<?php echo url_for('amount/ajaxEdit?ymd='.$year.sprintf('%02d', $month).sprintf('%02d', $day)) ?>?iframe=true&amp;width=640&amp;height=480" rel="prettyPhoto[iframe]" id="edit_<?php echo $day ?>" class="hide" >&nbsp;</a>
+                    </div>
+                </th>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <th class="bg-success <?php if($week == 0): ?>text-danger<?php endif; ?>"><?php echo BasicsPeer::find('week_format', $week) ?></th>
+                <?php endforeach; ?>-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <!-- 通過金額 -->
+                <th class="bg-warning"><nobr>通過金額</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getPassingprice()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr>
+           <!-- <?php if(0): ?>-->
+            <tr>
+                <!-- 収受形態 -->
+                <th class="bg-warning"><nobr>収受形態</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getCollectionform()) : ''; ?></td>
+
+                <?php endforeach; ?>-->
+            </tr>
+            <tr>
+                <!-- 単価 -->
+                <th class="bg-warning"><nobr>単価</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();">
+                    <?php
+							$method = 'getOperationweek'.$week;
+							$currentdate = sprintf('%04d-%02d-%02d', $dateY, $dateM, $day);
+							$flg = true;
+							foreach($holidays as $h){
+								if($h == $currentdate){
+									$flg = false;
+								}
+							}
+							if($department->$method() != '1'){ $flg = false; }
+                    ?>
+                    <?php if($flg): ?>
+                    <?php echo number_format(floor($department->getCostprice())) ?></td>
+                <?php endif;  ?>-->
+
+
+<!--                <?php endforeach; ?>-->
+            </tr>
+           <!-- <?php endif; ?>-->
+
+            <tr>
+                <!-- 収受額 -->
+                <th class="bg-warning"><nobr>収受額</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format(floor($amounts[$day]->getCollectionprice())) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- 入荷数量 -->
+                <th class="bg-warning"><nobr>入荷数量</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format(floor($amounts[$day]->getInnum())) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- 出荷ケース数 -->
+                <th class="bg-warning"><nobr>出荷ケース数</nobr></nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format(floor($amounts[$day]->getOutcasenum())) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- 出荷バラ数 -->
+                <th class="bg-warning"><nobr>出荷バラ数</nobr></th>
+               <!-- <?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format(floor($amounts[$day]->getOutbaranum())) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr>
+            <!--<?php if(0): ?>-->
+            <tr>
+                <!-- 出荷ライン数 -->
+                <th class="bg-warning"><nobr>出荷ライン数 </nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format(floor($amounts[$day]->getOutlinenum())) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr>
+            <!--<?php endif; ?>-->
+            <tr>
+                <!-- オリコン数 -->
+                <th class="bg-warning"><nobr>オリコン数</nobr></th>
+               <!-- <?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format(floor($amounts[$day]->getOriconnum())) : ''; ?></td>
+                <?php endforeach; ?>-->
+                <!-- カゴ単数 -->
+            </tr><tr>
+                <th class="bg-warning"><nobr>カゴ車数</nobr></th>
+               <!-- <?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format(floor($amounts[$day]->getCartnum())) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- ライン数 -->
+                <th class="bg-warning"><nobr>ライン数</nobr></th>
+               <!-- <?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format(floor($amounts[$day]->getLinenum())) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- 作業時間 -->
+                <th class="bg-warning"><nobr>作業時間</nobr></th>
+               <!-- <?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format(floor($amounts[$day]->getWorktime())) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr>
+
+          <!--  <?php /* ?>-->
+            <tr>
+                <!-- 入荷行数 -->
+                <th class="bg-warning"><nobr>入荷行数</nobr></th>
+               <!-- <?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getInlinenum()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- 緊急補充数 -->
+                <th class="bg-warning"><nobr>緊急補充数</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getUrgentsupplement()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- アイテム数 -->
+                <th class="bg-warning"><nobr>アイテム数</nobr></th>
+              <!--  <?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getItemnum()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- イレギュラー1 -->
+                <th class="bg-warning"><nobr>イレギュラー1</nobr></th>
+               <!-- <?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getIrregular1()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- イレギュラー2 -->
+                <th class="bg-warning"><nobr>イレギュラー2</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getIrregular2()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- イレギュラー3 -->
+                <th class="bg-warning"><nobr>イレギュラー3</nobr></th>
+               <!-- <?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getIrregular3()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- イレギュラー4 -->
+                <th class="bg-warning"><nobr>イレギュラー4</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getIrregular4()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- イレギュラー5 -->
+                <th class="bg-warning"><nobr>イレギュラー5</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getIrregular5()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- センター開始時間 -->
+                <th class="bg-warning"><nobr>センター開始時間</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getIrregularstart()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- センター終了時間 -->
+                <th class="bg-warning"><nobr>センター終了時間</nobr></th>
+               <!-- <?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getIrregularend()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- 報告者 -->
+                <th class="bg-warning"><nobr>報告者</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getReporter()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- 在庫金額 -->
+                <th class="bg-warning"><nobr>在庫金額</nobr></th>
+                <!--<?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getStockprice()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr><tr>
+                <!-- 使用坪数 -->
+                <th class="bg-warning"><nobr>使用坪数</nobr></th>
+               <!-- <?php foreach($dayfields as $day => $week): ?>
+                <td class="t-right" onClick="$('#edit_<?php echo $day ?>').click();"><?php echo isset($amounts[$day]) ? number_format($amounts[$day]->getUsefloor()) : ''; ?></td>
+                <?php endforeach; ?>-->
+            </tr>
+            <!--<?php */ ?>-->
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pull-right">
+        <a class="btn btn-primary" href="work/list?search_year=&search_month=">ワークスケジュールの設定へ</a>
+        <a class="btn btn-primary" onclick="return confirm('月のワークスケジュールを初期化します\n本当によろしいですか？')">ワークスケジュールの初期化</a>
+       <!-- <?php echo link_to('ワークスケジュールの設定へ', "work/list?search_year=".intval($year)."&search_month=".intval($month), array('class' => 'btn btn-primary')) ?>
+        <?php if(0): ?>
+        <?php echo link_to('ワークスケジュールの初期化', 'works/updateDefaultAll?ym='.sprintf('%04d-%02d', $year, $month).'&return=amount', array(
+		'class' => 'btn btn-primary',
+        'confirm' => $year.'年'.$month."月のワークスケジュールを初期化します\n本当によろしいですか？",
+        )) ?>
+        <?php endif; ?>
+
+        <?php if(is_mobile()): ?>
+        <?php echo mobile_send_form('amount/downloadUploadCsv?return=list&formatyear='.$year.'&formatmonth='.$month) ?>
+        <?php else: ?>
+        <?php echo link_to('CSVダウンロード', 'amount/downloadUploadCsv?return=list&formatyear='.$year.'&formatmonth='.$month, array('class' => 'btn btn-primary',)) ?>
+        <?php endif; ?>-->
+
+
+
+
+    </div>
+
+    <br />
+
+</div>
+</body>
+</html>

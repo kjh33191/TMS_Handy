@@ -1,0 +1,68 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+<div th:fragment="header" >
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Labor System</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" >
+            <ul class="nav navbar-nav navbar-right">
+                <!-- 部門・会社権限 -->
+                <!--<?php if($sf_user->hasCredential('manager') or $sf_user->hasCredential('normal') or $sf_user->hasCredential('general')): ?>-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">物量予定
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/amount/index">データーアップロード</a></li>
+                        <li><a href="amount/list">データ確認・修正</a></li>
+                        <li><a href="amount/list">収受別数量アップロード</a></li>
+                    </ul>
+                </li>
+
+                <li class=""><a href="work">ワークスケジュール作成</a></li>
+                <li class=""><a href="shift/list">シミュレーション</a></li>
+
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">日報
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="report/index">一覧・登録</a></li>
+                        <li><a href="report/csv">CSV登録・ダウンロード</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">勤怠データ
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="attendance/index">実績</a></li>
+                        <li><a href="attendance/downloadCsv">予定</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">実績データ
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="attendance/index">日次決算</a></li>
+                        <li><a href="attendance/index">生産性</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+spring.thymeleaf.mode=LEGACYHTML5
+
+#Database
+#spring.datasource.driverClassName=oracle.jdbc.OracleDriver
+#spring.datasource.url=jdbc:oracle:thin:@invsoft-svr1:1521:TKKMDB1
+spring.datasource.driverClassName=net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+spring.datasource.url=jdbc:log4jdbc:sqlserver://LAPTOP-533C2DQ6:1433:DatabaseName=SQLEXPRESS
+
+#Mybatis
+#mybatis.config-locations=classpath:mybatis/mybatis-config.xml
+mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
+mybatis.type-aliases-package=com.kim.test.entity

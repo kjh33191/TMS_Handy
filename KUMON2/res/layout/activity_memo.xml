@@ -1,0 +1,184 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+   	android:id="@+id/memo_topview"
+    android:orientation="vertical"    
+    style="@style/AppBG"
+	android:layout_alignParentTop="true"
+    > 
+		<RelativeLayout
+		    android:id="@+id/MarkControlFrame"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content" >
+
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center"
+			    android:layout_marginLeft="250dp"
+			    android:layout_marginTop="20dp"
+			    android:text="@string/text_teacher_memo"
+			    android:textColor="#FF000000"
+			    android:textSize="22sp" />
+
+		    <ImageView
+		        android:id="@+id/imageviewSound"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="50dp"
+		        android:layout_marginTop="77dp"
+		        android:background="#FFFFFFFF"
+		        android:contentDescription="@string/image_description_speaker"
+		        android:onClick="onClickSoundMemo"
+		        android:src="@drawable/icon_speaker_on" />
+		    		
+			<TextView
+		        android:layout_marginLeft="396dp"
+				android:layout_marginTop="35dp"
+                android:onClick="onClickDummy"
+		        android:id="@+id/textview_record"
+		        android:layout_width="153dp"
+		        android:layout_height="67dp"
+		        android:background="@drawable/simple_frame" 
+		        />
+		    		
+		    <ImageView
+		        android:id="@+id/pageback"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="220dp"
+		        android:layout_marginTop="75dp"
+		        android:background="#FFFFFFFF"
+		        android:contentDescription="@string/image_description_bback"
+		        android:onClick="onClickPageBack"
+		        android:src="@drawable/bback"
+		        android:visibility="invisible" />
+
+		    <ImageView
+		        android:id="@+id/pagenext"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="350dp"
+		        android:layout_marginTop="75dp"
+		        android:background="#FFFFFFFF"
+		        android:contentDescription="@string/image_description_bnext"
+		        android:onClick="onClickPageNext"
+		        android:src="@drawable/bnext"
+		        android:visibility="invisible" />
+		    						
+		    <TableLayout
+				android:visibility="visible" 
+		        android:id="@+id/tableLayout_record"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="396dp" 
+		        android:layout_marginTop="37dip" >
+		        <TableRow>
+				    <ProgressBar
+		                android:onClick="onClickDummy"
+						android:padding="4dip"
+				        android:id="@+id/progressBar_RCProgress"
+				        style="?android:attr/progressBarStyleHorizontal"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_span="2"
+				        />
+
+					<TextView
+					    android:id="@+id/textview_RCTime"
+					    android:layout_width="40dp"
+					    android:layout_height="fill_parent"
+					    android:layout_weight="1"
+					    android:gravity="right|center_vertical"
+					    android:onClick="onClickDummy"
+					    android:text="@string/text_pagenumber3"
+					    android:textColor="#FFFFFFFF"
+					    android:textSize="10sp" />
+
+					<ImageView
+					    android:id="@+id/imagebutton_RecordClose"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:contentDescription="@string/image_description_close"
+					    android:onClick="onClickRecordClose"
+					    android:paddingLeft="10dip"
+					    android:src="@drawable/close_middle" />
+										
+   				</TableRow>
+		        
+		        <TableRow>
+
+		            <ImageView
+		                android:id="@+id/imagebutton_RecordStop"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:contentDescription="@string/image_description_rpstop"
+		                android:onClick="onClickRecordStop"
+		                android:paddingBottom="4dip"
+		                android:paddingLeft="4dip"
+		                android:src="@drawable/rp_stop_no" />
+
+		            <ImageView
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:contentDescription="@string/image_description_rprecord"
+		                android:paddingBottom="4dip"
+		                android:paddingLeft="4dip"
+		                android:src="@drawable/record_no" />
+
+		            <ImageView
+		                android:id="@+id/imagebutton_RecordPlay"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:contentDescription="@string/image_description_rpstartx1"
+		                android:onClick="onClickRecordPlay"
+		                android:paddingBottom="4dip"
+		                android:paddingLeft="4dip"
+		                android:src="@drawable/rp_startx1_off" />
+		            
+		            <ImageView
+		                android:id="@+id/imagebutton_RecordPause"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:contentDescription="@string/image_description_rppause"
+		                android:onClick="onClickRecordPause"
+		                android:paddingBottom="4dip"
+		                android:paddingLeft="4dip"
+		                android:src="@drawable/rp_pause_no" />
+		            		            
+		     	</TableRow>
+
+		    </TableLayout>
+		</RelativeLayout>    
+	    		
+		<TextView
+			android:layout_marginTop="5dp"
+			android:id="@+id/textviewMemo"
+			android:layout_gravity="center" 
+	    	android:layout_width="500dp"
+	        android:layout_height="400dp"
+			android:textSize="22sp"
+			android:textColor="#FF000000"
+			android:background="#FFDDDDDD"
+		   	/>
+
+	    <ImageView
+	        android:id="@+id/imageviewink"
+	        android:layout_width="500dp"
+	        android:layout_height="350dp"
+	        android:layout_gravity="center"
+	        android:layout_marginTop="5dp"
+	        android:background="#FFFFFFFF"
+	        android:contentDescription="@string/image_description_ink" />
+		
+		<ImageButton
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center"
+		    android:layout_marginTop="20dp"
+		    android:contentDescription="@string/image_description_back"
+		    android:onClick="onClickBack"
+		    android:src="@drawable/btn_back" />
+
+	</LinearLayout>

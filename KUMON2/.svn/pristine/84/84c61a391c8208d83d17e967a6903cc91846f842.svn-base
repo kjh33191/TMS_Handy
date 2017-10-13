@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  
+    xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="wrap_content"  
+    android:layout_height="wrap_content"  
+    android:orientation="vertical"
+    >     
+    
+    <TextView
+        android:id="@+id/dialog_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="left"
+        android:text="@string/text_password"
+        android:labelFor="@+id/dialog_edittext"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+    <EditText        
+        android:id="@+id/dialog_edittext"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="fill_horizontal"
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+		android:inputType="textPassword"
+        />
+</LinearLayout>

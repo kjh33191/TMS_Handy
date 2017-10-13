@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="kumon2014.activity"
+    android:versionCode="18"
+    android:versionName="1.8" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:noHistory="true"
+        android:theme="@android:style/Theme.NoTitleBar" android:largeHeap="true">
+        <activity
+            android:name="kumon2014.activity.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorPortrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="kumon2014.activity.StartActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.WebLoginActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.WebNoticeActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.TopMenuActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.StudyListActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.StudyEntranceActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.StudyStartActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.StudyRetryActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.StudyActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.StudyFinishActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.WebGraphActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.WebChartActivity"
+            android:label="@string/title_activity_TopMenu" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.StudyConfirmActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.GradingActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.StudyFinishGradeMySelfActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.StudyFinishGradeOnClientActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.GradeStatusActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.SettingActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.EnvActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.LogActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.StudySpecialTestStartActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.MemoActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.MemoLandActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name="kumon2014.activity.MaintenanceActivity"
+            android:label="@string/title_activity_TopMenu"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+    </application>
+
+</manifest>

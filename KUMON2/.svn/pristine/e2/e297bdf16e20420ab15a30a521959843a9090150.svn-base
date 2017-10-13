@@ -1,0 +1,260 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/grade_topview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/partial_stationery_bar" />
+    
+    <include layout="@layout/partial_inbtn_bar" />
+
+    <RelativeLayout
+        android:id="@+id/MarkControlFrame"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <kumon2014.view.MarkControlSurface
+            android:id="@+id/MarkControlSurfaceMain"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <!-- TextView
+            android:id="@+id/textview_penplayback"
+            android:layout_width="396dp"
+            android:layout_height="72dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="3dip"
+            android:background="@drawable/simple_frame"
+            android:onClick="onClickDummy" / -->
+
+        <TableLayout
+            android:id="@+id/tableLayout_penplayback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="5dip"
+            android:padding="2dp"
+            android:background="@drawable/simple_frame"
+            android:visibility="visible" >
+
+            <TableRow>
+
+                <ProgressBar
+                    android:id="@+id/progressBar_PRProgress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:onClick="onClickDummy"
+                    android:padding="4dip" />
+
+                <TextView
+                    android:id="@+id/textview_RPTime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_span="3"
+                    android:gravity="center"
+                    android:onClick="onClickDummy"
+                    android:text="@string/text_playbacktime"
+                    android:textColor="#FFFFFFFF" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RPListen"
+                    android:layout_width="76dp"
+                    android:layout_height="30dp"
+                    android:layout_span="2"
+                    android:contentDescription="@string/image_description_rplisten"
+                    android:onClick="onClickDummy"
+                    android:padding="2dip"
+                    android:src="@drawable/rp_listen_off" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RPRecord"
+                    android:layout_width="76dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/image_description_rplisten"
+                    android:onClick="onClickDummy"
+                    android:padding="2dip"
+                    android:src="@drawable/rp_listen_off"
+                    android:visibility="invisible" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                    android:id="@+id/imagebutton_RPBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rpback"
+                    android:onClick="onClickRPBack"
+                    android:padding="2dip"
+                    android:src="@drawable/rp_back_gray" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RPStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rpstop"
+                    android:onClick="onClickRPStop"
+                    android:padding="2dip"
+                    android:src="@drawable/rp_stop_off" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RPPose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rppause"
+                    android:onClick="onClickRPPause"
+                    android:padding="2dip"
+                    android:src="@drawable/rp_stopat_off" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RPPlay1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rpstartx1"
+                    android:onClick="onClickRPPlay1"
+                    android:padding="2dip"
+                    android:src="@drawable/rp_startx1_off" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RPPlay2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rpstartx2"
+                    android:onClick="onClickRPPlay2"
+                    android:padding="2dip"
+                    android:src="@drawable/rp_startx2_off" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RPPlay4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rpstartx4"
+                    android:onClick="onClickRPPlay4"
+                    android:padding="2dip"
+                    android:src="@drawable/rp_startx4_off" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RPPlay8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rpstartx8"
+                    android:onClick="onClickRPPlay8"
+                    android:padding="2dip"
+                    android:src="@drawable/rp_startx8_off" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RPNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rpnext"
+                    android:onClick="onClickRPNext"
+                    android:padding="2dip"
+                    android:src="@drawable/rp_next_off" />
+
+            </TableRow>
+        </TableLayout>
+
+        <!-- TextView
+            android:id="@+id/textview_record"
+            android:layout_width="153dp"
+            android:layout_height="67dp"
+            android:layout_marginLeft="440dp"
+            android:layout_marginTop="3dip"
+            android:background="@drawable/simple_frame"
+            android:onClick="onClickDummy" / -->
+
+        <TableLayout
+            android:id="@+id/tableLayout_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="440dp"
+            android:layout_marginTop="5dip"
+            android:padding="2dp"
+            android:background="@drawable/simple_frame"
+            android:visibility="visible" >
+
+            <TableRow>
+
+                <ProgressBar
+                    android:id="@+id/progressBar_RCProgress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:onClick="onClickDummy"
+                    android:padding="4dip" />
+
+                <TextView
+                    android:id="@+id/textview_RCTime"
+                    android:layout_width="40dp"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:onClick="onClickDummy"
+                    android:text="@string/text_recordtime"
+                    android:textColor="#FFFFFFFF" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RecordClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_close"
+                    android:onClick="onClickRecordClose"
+                    android:paddingLeft="10dip"
+                    android:src="@drawable/close_middle" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                    android:id="@+id/imagebutton_RecordStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rpstop"
+                    android:onClick="onClickRecordStop"
+                    android:paddingBottom="4dip"
+                    android:paddingLeft="4dip"
+                    android:src="@drawable/rp_stop_no" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RecordStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rprecord"
+                    android:onClick="onClickRecordStart"
+                    android:paddingBottom="4dip"
+                    android:paddingLeft="4dip"
+                    android:src="@drawable/record_no" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RecordPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rpstartx1"
+                    android:onClick="onClickRecordPlay"
+                    android:paddingBottom="4dip"
+                    android:paddingLeft="4dip"
+                    android:src="@drawable/rp_startx1_off" />
+
+                <ImageView
+                    android:id="@+id/imagebutton_RecordPause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_description_rppause"
+                    android:onClick="onClickRecordPause"
+                    android:paddingBottom="4dip"
+                    android:paddingLeft="4dip"
+                    android:src="@drawable/rp_pause_no" />
+
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+    <include layout="@layout/partial_navigation_bar" />
+
+</LinearLayout>

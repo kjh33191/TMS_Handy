@@ -1,0 +1,9 @@
+package com.kim.test.dao;
+
+import org.apache.ibatis.annotations.Select;
+
+import com.kim.test.entity.MemoEntity;
+
+public interface MemoDao {
+    MemoEntity selectAll();
+}

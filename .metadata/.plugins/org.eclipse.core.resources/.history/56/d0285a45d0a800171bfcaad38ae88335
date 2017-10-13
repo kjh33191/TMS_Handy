@@ -1,0 +1,240 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>ワークスケジュール初期値設定</title>
+<meta charset="UTF-8">
+<script type="text/javascript" src="/js/common/jquery-3.2.1.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style type="text/css">
+#main {
+  margin-top: 60px;
+}
+</style>
+    
+</head>
+<body>
+<div th:include="labor/common/headerBar :: header"></div>
+<div class="login-name">
+</div>
+
+<div class="container-fluid" id="main">
+
+    <h2 class="page-header">ワークスケジュール初期値設定</h2>
+
+    <form class="form form-inline" action="/work/list">
+
+    <div class="input-group input-group-sm">
+        <select class="form-control">
+            <option>2017</option>
+            <option>2016</option>
+            <option>2015</option>
+            <option>2014</option>
+        </select>
+        <div class="input-group-addon">年</div>
+    </div>
+    <div class="input-group input-group-sm">
+        <!--<?php echo select_tag('search_month', options_for_select($monthoptions, $month), array('class' => 'form-control',)) ?>-->
+        <select class="form-control">
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+        </select>
+        <div class="input-group-addon">月</div>
+    </div>
+    <div class="input-group input-group-sm">
+        <!--<?php echo submit_tag('表示', array('class' => 'btn btn-primary btn-sm',)) ?>-->
+        <submit class="btn btn-primary btn-sm">表示</submit>
+    </div>
+    </form>
+
+
+<br class="clear" /><br />
+
+<style type="text/css">
+.table-twin {
+	position:relative
+}
+.table-header {}
+.table-header table {
+	width: 200px;
+}
+.table-header table tr th {
+	text-align: center;
+	font-size: 0.8em;
+	height: 24px;
+}
+.table-header table tr td {
+	text-align: center;
+	font-size: 0.8em;
+	height: 24px;
+	padding-top: 5px!important;
+}
+.table-body {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border-right: solid 1px #ccc;
+	margin-left: 200px;
+	margin-bottom: -10px;
+	overflow-x: scroll;
+}
+.table-body table tr th {
+	text-align: center;
+	font-size: 0.8em;
+	height: 24px;
+}
+.table-body table tr td {
+	text-align: center;
+	font-size: 0.8em;
+	height: 24px;
+	padding-top: 5px!important;
+}
+</style>
+
+ 
+<div class="table-twin">
+
+	<div class="table-header">
+		<table class="table table-bordered chart">
+			<thead>
+				<tr>
+					<th style="width:160px" class="nobr chartbox">作業</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<a href="#" class="hide" >&nbsp;</a>
+					</td>
+				</tr>
+				<tr>
+					<th class="bg-success">時間帯別計</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="table-body" style="overflow-x: scroll; -webkit-overflow-scrolling: touch;">
+		<table class="table table-bordered chart" style="margin-bottom: 0px;table-layout: fixed;">
+			<thead>
+				<tr>
+					<?php foreach($timelines as $key => $val): ?>
+						<th colspan="<?php echo count($val['minutes']) ?>" rowspan="2"><?php echo sprintf('%02d', $val['hour']) ?></th>
+					<?php endforeach; ?>
+					<th class="bg-success nobr" style="width:40px;">作業計</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php $chargerow = array() ?>
+				<?php foreach($works as $work): ?>
+					<?php
+						$args = CommonClass::timeConvertInteger($work->getTimestart(), $work->getTimeend());
+						$timestart = $args['start'];
+						$timeend = $args['end'];
+					?>
+					<tr>
+						<?php	$chargecol = 0; ?>
+						<?php $isfirst = true; ?>
+						<?php foreach($timelines as $key => $val): ?>
+
+							<?php
+								foreach($val['minutes'] as $ke => $va)
+                {
+									$timecurrent = (int)sprintf('%02d%02d', $key, $ke);
+									$targetstamp = sprintf('%02d:%02d', $val['hour'], $va);
+                  if(substr($work->getTimestart(), 0, 5) == $targetstamp){
+                    $currflg = 1;
+                  }
+
+                  if($currflg == 1 && $targetstamp == substr($work->getTimeend(), 0, 5)){
+
+                    $currflg = 2;
+                  }
+
+                  if($currflg == 1){
+
+										echo '<td style="background:#fcc;overflow:visible;;" class="nobr" onClick="$(\'#edit_'.$work->getId().'\').click();">';
+										if($isfirst){
+											$isfirst = false;
+											echo substr($work->getTimestart(), 0, 5) ?>～<?php echo substr($work->getTimeend(), 0, 5) ?>,&nbsp;<?php echo $work->getStaffnum().'人';
+										}else {
+											echo '&nbsp;';
+										}
+
+										$chargecol += $work->getStaffnum() * 0.25;
+										$chargerow['row'.$key] += $work->getStaffnum() * 0.25;
+										echo '</td>';
+                    
+                  }else {
+                    echo '<td onClick="$(\'#edit_'.$work->getId().'\').click();">&nbsp;</td>';
+                  }
+                  
+                  
+                  
+/*
+									if($timestart <= $timecurrent && $timecurrent < $timeend && @$absence != '1'){
+										echo '<td style="background:#fcc;overflow:visible;;" class="nobr" onClick="$(\'#edit_'.$work->getId().'\').click();">';
+										if($isfirst){
+											$isfirst = false;
+											echo substr($work->getTimestart(), 0, 5) ?>～<?php echo substr($work->getTimeend(), 0, 5) ?>,&nbsp;<?php echo $work->getStaffnum().'人';
+										}else {
+											echo '&nbsp;';
+										}
+
+										$chargecol += $work->getStaffnum() * 0.25;
+										$chargerow['row'.$key] += $work->getStaffnum() * 0.25;
+										echo '</td>';
+
+									}else {
+										echo '<td onClick="$(\'#edit_'.$work->getId().'\').click();">&nbsp;</td>';
+
+									}
+*/                 
+								}
+							?>
+						<?php endforeach; ?>
+						<th class="bg-success" style="display:block"><?php echo number_format($chargecol, 2); ?></th>
+						<?php $chargetotal += $chargecol; ?>
+					</tr>
+				<?php endforeach; ?>
+				<tr>
+					<?php foreach($timelines as $key => $val): ?>
+						<td colspan="<?php echo count($val['minutes']) ?>" class="bg-success"><?php echo number_format((float)$chargerow['row'.$key], 2) ?></td>
+					<?php endforeach; ?>
+					<th class="bg-success"><?php echo number_format($chargetotal, 2) ?></th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<a href="<?php echo url_for('work/ajaxCreate') ?>?iframe=true&amp;width=768&amp;height=640" rel="prettyPhoto[iframe]"class="btn btn-primary" >作業を追加する</a>
+&nbsp;&nbsp;
+<?php echo link_to('過去のワークスケジュールをコピーする', 'work/copy', array(
+  'class' => 'btn btn-default',
+)) ?>
+
+
+<div class="pull-right">
+	<?php echo link_to('このワークスケジュールをシミュレーションに反映', 'works/updateDefaultAll?ym='.sprintf('%04d-%02d', $sf_user->getAttribute('search_year'), $sf_user->getAttribute('search_month')), array(
+		'class' => 'btn btn-primary',
+		'confirm' => "シフト表に設定されている".$sf_user->getAttribute('search_year').'年'.$sf_user->getAttribute('search_month')."月のワークスケジュールを初期化します\n本当によろしいですか？",
+	)) ?>
+</div>
+
+
+<br />
+
+</div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gradestatus_topview"
+    style="@style/AppBG"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#FFFFFFFF"
+        android:drawableRight="@drawable/logos"
+        android:gravity="center_vertical"
+        android:text="@string/title_grading"
+        android:textColor="#FF000000"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textview_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textColor="#FF000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/text_san"
+            android:textColor="#FF000000"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="160dp"
+        android:background="#FFFFFFFF"
+        android:paddingBottom="30dp" >
+
+        <TextView
+            android:id="@+id/textview_gradewait"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/text_gradingstatus"
+            android:textColor="#FF000000"
+            android:textSize="48sp" />
+
+        
+        <TableLayout
+            android:id="@+id/table1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/textview_gradewait"
+            android:background="#FF000000"
+            android:paddingLeft="1dp"
+            android:paddingTop="1dp" >
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="1dp"
+                    android:background="#FFFFFFFF"
+                    android:gravity="center"
+                    android:text="@string/text_inclassroomruby"
+                    android:textColor="#FF000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="1dp"
+                    android:background="#FFFFFFFF"
+                    android:gravity="center"
+                    android:text="@string/text_inhomeworkruby"
+                    android:textColor="#FF000000"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="1dp"
+                    android:background="#FFFFFFFF"
+                    android:gravity="center"
+                    android:text="@string/text_inclassroom"
+                    android:textColor="#FF000000"
+                    android:textSize="48sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="1dp"
+                    android:background="#FFFFFFFF"
+                    android:gravity="center"
+                    android:text="@string/text_inhomework"
+                    android:textColor="#FF000000"
+                    android:textSize="48sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/textview_gradetodayLB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="1dp"
+                    android:background="#FFFFFFFF"
+                    android:gravity="center"
+                    android:text="@string/text_space"
+                    android:textColor="#FF000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textview_gradehomeLB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="1dp"
+                    android:background="#FFFFFFFF"
+                    android:gravity="center"
+                    android:text="@string/text_waitgraderuby"
+                    android:textColor="#FF000000"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/textview_gradetoday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="1dp"
+                    android:background="#FFFFFFFF"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/text_five"
+                    android:textColor="#FF000000"
+                    android:textSize="48sp" />
+
+                <TextView
+                    android:id="@+id/textview_gradehome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="1dp"
+                    android:background="#FFFFFFFF"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/text_waitgrade"
+                    android:textColor="#FF000000"
+                    android:textSize="48sp" />
+            </TableRow>
+        </TableLayout>
+        
+        <ImageButton
+            android:id="@+id/imagebutton_update"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_below="@+id/table1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:contentDescription="@string/image_description_reshow"
+            android:onClick="onClickUpdate"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_update" />
+
+    <ImageView
+        android:id="@+id/imageview_hana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:contentDescription="@string/image_description_hana"
+        android:src="@drawable/hanamaru" />
+        
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/imagebutton_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/rel1"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/image_description_receive"
+        android:onClick="onClickReceive"
+        android:src="@drawable/btn_receive" />
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imagebutton_receive"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/image_description_totop"
+        android:onClick="onClickTop"
+        android:src="@drawable/btn_top" />
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("내 돈......");
+		System.out.println("어디갔어...");
+		System.out.println("어디갔어...");
+		System.out.println("어디갔어...");
+		System.out.println("어디갔어...");
+		
+		System.out.println("Execution time : "  + Util.getCurrentDateTime());
+		System.out.println("Made by Kim");
+
+	}
+}

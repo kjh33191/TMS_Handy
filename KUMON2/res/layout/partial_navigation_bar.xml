@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#FF7DCEF4"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal" >
+
+        <ImageButton
+            android:id="@+id/imagebutton_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_description_finish"
+            android:onClick="onClickFinish"
+            android:padding="6dip"
+            android:src="@drawable/bfinish" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal" >
+
+        <ImageButton
+            android:id="@+id/imagebutton_Rest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_description_brest"
+            android:onClick="onClickRest"
+            android:padding="6dip"
+            android:src="@drawable/brest" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal" >
+
+        <ImageButton
+            android:id="@+id/imagebutton_skipback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_description_bskipback"
+            android:onClick="onClickSkipBack"
+            android:padding="6dip"
+            android:src="@drawable/bskipback_off" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal" >
+
+        <ImageButton
+            android:id="@+id/imagebutton_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_description_bback"
+            android:onClick="onClickBack"
+            android:padding="6dip"
+            android:src="@drawable/bback_off" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal" >
+
+        <ImageButton
+            android:id="@+id/imagebutton_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_description_bnext"
+            android:onClick="onClickNext"
+            android:padding="6dip"
+            android:src="@drawable/bnext" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal" >
+
+        <ImageButton
+            android:id="@+id/imagebutton_skipnext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_description_bskipnext"
+            android:onClick="onClickSkipNext"
+            android:padding="6dip"
+            android:src="@drawable/bskipnext" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    style="@style/AppBG" 
+   	android:id="@+id/studylist_topview"
+    >
+
+    <TextView
+   	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+       	android:text="@string/title_LearningList"
+		android:background="#FFFFFFFF"
+		android:gravity="center_vertical"
+		android:textSize="16sp"
+		android:textColor="#FF000000"
+		android:drawableRight="@drawable/logos"
+   		/> 
+		
+	<LinearLayout
+		android:layout_marginTop="60dp"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal">
+    
+	    <TextView
+		    android:id="@+id/textview_Name"
+    	    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="right"
+			android:textSize="24sp"
+			android:textStyle="bold"
+			android:textColor="#FF000000"
+	   		/>
+	    	    	
+	    <TextView
+    	    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/text_san"
+			android:layout_weight="1"
+			android:gravity="center_vertical"
+			android:textSize="18sp"
+			android:textColor="#FF000000"
+	   		/>
+	    	
+	</LinearLayout>
+		
+	<ScrollView
+	    android:id="@+id/scrollview_main"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginBottom="200dp"
+	    android:layout_marginLeft="50dp"
+	    android:layout_marginRight="50dp"
+	    android:layout_marginTop="283dp"
+	    android:background="#FFFFFFFF"
+	    android:orientation="vertical"
+	    android:scrollbarSize="40dip" >
+    	
+		<TableLayout
+	   	    android:id="@+id/tablelayout_learning" 
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+			android:stretchColumns="0"
+			android:layout_marginTop="10dip"
+			>
+
+<!-- 
+ -->		    
+							    	
+		</TableLayout>
+	</ScrollView>
+			
+    <ImageButton
+        android:id="@+id/imagebutton_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dip"
+        android:contentDescription="@string/image_description_totop"
+        android:onClick="onClickTop"
+        android:src="@drawable/btn_top" />
+    
+<!--     
+    <Button
+		android:onClick="onClickMemory"	    
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="メモリー"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		/>
+     -->			    		
+</RelativeLayout>
